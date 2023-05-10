@@ -1,0 +1,179 @@
+@charset "utf-8";
+@font-face {
+    font-family: "Poppins";
+    src: 
+        url("../assets/fonts/Poppins-Regular.ttf") format("truetype"),
+        url("../assets/fonts/Poppins-Bold.ttf") format("truetype"),
+        url("../assets/fonts/Poppins-BoldItalic.ttf") format("truetype"),
+        url("../assets/fonts/Poppins-ExtraBold.ttf") format("truetype"),
+        url("../assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype"),
+        url("../assets/fonts/Poppins-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --Purple: hsl(259, 100%, 65%);/*geral*/
+    --Light-red: hsl(0, 100%, 67%);/*erros*/
+    --White: hsl(0, 0%, 100%);/*main > bg*/
+    --Off-white: hsl(0, 0%, 94%);/*body bg*/
+    --Light-grey: hsl(0, 0%, 86%);/*hr*/
+    --Smokey-grey: hsl(0, 1%, 44%);/*inputs e labels*/
+    --Off-black: hsl(0, 0%, 8%);/*results*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--Off-white);
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+main {
+    background-color: var(--White);
+    border-radius: 15px 15px 70px 15px;
+    padding: 30px;
+    max-width: 350px;
+}
+
+main > section#top > form {
+    display: flex;
+    gap: 15px;
+}
+
+main > section#top > form > div.inputs > label {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    font-size: .7rem;
+    color: var(--Smokey-grey);
+}
+main > section#top > form > div.inputs > label.error {
+    color: var(--Light-red);
+}
+main > section#top > form > div.inputs > input {
+    border-radius: 5px;
+    border: 1px solid var(--Light-grey);
+    padding: 7px;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-indent: 5px;
+    outline: none;
+    color: var(--Off-black);
+}
+main > section#top > form > div.inputs > input:focus {
+    border-color: var(--Purple);
+}
+main > section#top > form > div.inputs > input.error {
+    border-color: var(--Light-red);
+    opacity: .7;
+}
+main > section#top > form > div.inputs > span.error {
+    color: var(--Light-red);
+    font-size: .685rem;
+    font-weight: 400;
+    font-style: italic;
+    opacity: .7;
+}
+
+main > section#middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+main > section#middle > hr {
+    width: 100%;
+    color: var(--Light-grey);
+}
+main > section#middle > img {
+    background-color: var(--Purple);
+    border-radius: 50%;
+    width: 60px;
+    padding: 15px;
+    margin-top: -30px;
+}
+
+main > section#bottom {
+    width: 100%;
+}
+
+main > section#bottom > p {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--Off-black);
+    overflow-x: auto;
+    margin-bottom: -20px;
+}
+main > section#bottom > p > span {
+    color: var(--Purple);
+    font-size: 3rem;
+    margin-inline-end: 10px;
+}
+
+footer {
+    font-size: 11px;
+    text-align: center; 
+}
+
+footer a {
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        background-color: var(--White);
+        border-radius: 15px 15px 150px 15px;
+        max-width: 600px;
+        padding: 40px;
+    }
+    main > section#top > form {
+        gap: 25px;
+        width: 75%;
+    }
+    main > section#top > form > div.inputs > input {
+        padding: 8px;
+        font-size: 1.5rem;
+    }
+    main > section#top > form > div.inputs > label:hover {
+        cursor: pointer;
+    }
+    main > section#top > form > div.inputs > input:hover {
+        cursor: pointer;
+    }
+    main > section#middle {
+        flex-direction: row;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    main > section#middle > img {
+        width: 70px;
+        margin-top: initial;
+        transition: background-color 1s ease-out;
+    }
+    main > section#middle > img:hover {
+        cursor: pointer;
+        background-color: var(--Off-black);
+    }
+    main > section#bottom > p {
+        font-size: 3.5rem;
+    }
+    main > section#bottom > p > span {
+        font-size: 4.5rem;
+    }
+}
